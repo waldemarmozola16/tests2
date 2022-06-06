@@ -21,13 +21,13 @@ public class Task2Test {
         WebDriver webDriver = driverFactory.initDriver();
         webDriver.get("https://pl.wikipedia.org/wiki/Wiki");
 
-        By mySelector = By.xpath("/html/body/div[4]/div[2]/nav[7]/div/ul");
+        By mySelector = By.cssSelector("#p-lang > div:nth-child(3) > ul:nth-child(1)");
         List<WebElement> myElements = webDriver.findElements(mySelector);
         for(WebElement e : myElements) {
             System.out.println(e.getText());
         }
 
-        webDriver.findElement(By.xpath("/html/body/div[4]/div[2]/nav[7]/div/ul/li[30]/a/span")).click();
+        webDriver.findElement(By.cssSelector("li.interlanguage-link:nth-child(30) > a:nth-child(1) > span:nth-child(1)")).click();
         String currentURL = webDriver.getCurrentUrl();
         System.out.println("Current Url is:"+ currentURL);
 
