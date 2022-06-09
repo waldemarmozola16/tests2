@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import javax.xml.bind.annotation.XmlList;
@@ -20,10 +22,8 @@ public class Task1Test {
         DriverFactory driverFactory = new DriverFactory();
         WebDriver driver = driverFactory.initDriver();
 
-        //WebDriverManager.firefoxdriver().setup();
-        //WebDriver driver = new FirefoxDriver();
-
         driver.get("https://www.onet.pl/");
+
         driver.quit();
     }
 
