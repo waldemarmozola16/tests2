@@ -18,18 +18,19 @@ public class Task2Test {
     @Test
     public void Task2Test(){
         DriverFactory driverFactory = new DriverFactory();
-        WebDriver webDriver = driverFactory.initDriver();
-        webDriver.get("https://pl.wikipedia.org/wiki/Wiki");
+        WebDriver driver = driverFactory.initDriver();
+        driver.get("https://pl.wikipedia.org/wiki/Wiki");
 
         By mySelector = By.cssSelector("#p-lang > div:nth-child(3) > ul:nth-child(1)");
-        List<WebElement> myElements = webDriver.findElements(mySelector);
+        List<WebElement> myElements = driver.findElements(mySelector);
         for(WebElement e : myElements) {
             System.out.println(e.getText());
         }
 
-        webDriver.findElement(By.cssSelector("li.interlanguage-link:nth-child(30) > a:nth-child(1) > span:nth-child(1)")).click();
-        String currentURL = webDriver.getCurrentUrl();
+        driver.findElement(By.cssSelector("li.interlanguage-link:nth-child(30) > a:nth-child(1) > span:nth-child(1)")).click();
+        String currentURL = driver.getCurrentUrl();
         System.out.println("Current Url is:"+ currentURL);
+        driver.quit();
 
 
 
